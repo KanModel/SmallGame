@@ -1,0 +1,21 @@
+name: Danganronpa
+version: ${project.version}
+main: win.kanmodel.smallgame.SmallGame
+authors: [KanModel]
+commands:
+  dgrp:
+    usage: /dgrp 获取更多帮助
+    description: 获取更多帮助
+    permission-message: 你没有权限！
+    aliases: [dg,dp]
+permissions:
+  dgrp.*:
+    default: true
+  dgrp.list:
+    default: op
+  dgrp.check:
+    default: op
+  dgrp.deal:
+    default: op
+  dgrp.reload:
+    default: op
