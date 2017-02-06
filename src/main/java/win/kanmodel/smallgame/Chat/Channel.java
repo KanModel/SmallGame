@@ -2,9 +2,9 @@ package win.kanmodel.smallgame.Chat;
 
 import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-import net.md_5.bungee.api.ChatColor;
 
 
 public class Channel {
