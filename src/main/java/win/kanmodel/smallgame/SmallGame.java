@@ -3,6 +3,8 @@ package win.kanmodel.smallgame;
 import org.bukkit.Color;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import win.kanmodel.smallgame.Listener.chat;
 import win.kanmodel.smallgame.Listener.death;
 
 public final class SmallGame extends JavaPlugin implements Listener {
