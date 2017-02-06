@@ -22,6 +22,7 @@ public final class SmallGame extends JavaPlugin implements Listener {
 
     public void setUpListener() {
         this.getServer().getPluginManager().registerEvents(new death(),this);
+        this.getServer().getPluginManager().registerEvents(new chat(),this);
     }
 
     public void setUpSettingManager() {
