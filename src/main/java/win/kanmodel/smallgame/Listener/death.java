@@ -2,6 +2,7 @@ package win.kanmodel.smallgame.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -21,9 +22,10 @@ public class death  implements Listener {
     public void onPlayerDeath(PlayerDeathEvent event){
         Player player = event.getEntity();
         if (Lobby.list.contains(player)){
-            player.sendMessage("gg");
+//            player.sendMessage("gg");
 //            player.performCommand("gamemode 3");
-            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 3 " + player.getName());
+//            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 3 " + player.getName());
+            player.setGameMode(GameMode.SPECTATOR);
         }
     }
 }

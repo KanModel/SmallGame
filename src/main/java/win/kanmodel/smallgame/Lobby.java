@@ -1,9 +1,7 @@
 package win.kanmodel.smallgame;
 
 import me.confuser.barapi.BarAPI;
-import org.bukkit.Bukkit;
-import org.bukkit.Color;
-import org.bukkit.Server;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -24,17 +22,27 @@ public class Lobby {
         BarAPI.removeBar(player);
         list.remove(player);
         refresh();
-        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 0 " + player.getName());
+//        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 0 " + player.getName());
+        player.setGameMode(GameMode.SURVIVAL);
     }
 
     public static void refresh(){
-        for (int i = 0; i < list.size(); i++){
-            if(list.size() > 0){
-                Player player = list.get(i);
-                BarAPI.setMessage(player,"欢迎加入[弹丸论破] 等待游戏开始中...人数:[" + list.size() + "]");
+//        for (int i = 0; i < list.size(); i++){
+//            if(list.size() > 0){
+//                Player player = list.get(i);
+//                BarAPI.setMessage(player,"欢迎加入[弹丸论破] 等待游戏开始中...人数:[" + list.size() + "]");
+//            }
+//        }
+        list.forEach(player -> BarAPI.setMessage(player,"欢迎加入[弹丸论破] 等待游戏开始中...人数:[" + list.size() + "]"));
+        /*players.forEach(p->{
+            p.sendMessage(ChatColor.GOLD + "[" + this.Name + "]" + ChatColor.WHITE + message);
+        });*/
+    }
 
-            }
-        }
+    public static void removePlayer(Player player){
+        BarAPI.removeBar(player);
+        list.remove(player);
+        refresh();
     }
 
     public static ArrayList<Player> getList() {
