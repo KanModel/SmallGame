@@ -1,6 +1,8 @@
 package win.kanmodel.smallgame.Listener;
 
 import me.confuser.barapi.BarAPI;
+import org.bukkit.Color;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -69,11 +71,16 @@ public class search implements Listener {
                                         refresh("距离学级裁判结束还有: " + time + "s 人数:[" + Lobby.getList().size() + "]");
                                         if(time == 0) {
 //                                coolDownNow = false;
-                                            refresh("游戏结束 胜利者：");
+//                                            Lobby.getList().forEach();
                                             Gamers.setStatus(Gamers.BEGAIN);
-//                                            Lobby.getList().forEach(player -> BarAPI.removeBar(player));
-                                            Lobby.getList().forEach(player -> GeneralPluginProvider.getGamers().getGamer(player).setChannel(Channel.getNormalC()));
-                                            refresh();
+                                            Lobby.getList().forEach(player -> player.sendMessage("&3游戏结束胜利者为："));
+                                            Lobby.getList().forEach(player -> BarAPI.removeBar(player));
+                                            Lobby.getList().forEach(player -> player.setGameMode(GameMode.SURVIVAL));
+                                            Lobby.getList().clear();
+                                            Gamers.getGamers().clear();
+                                            Channel.getKillerC().getPlayers().clear();
+                                            Channel.getNormalC().getPlayers().clear();
+                                            Channel.getJudgeC().getPlayers().clear();
                                             death.setL(null);
                                             cancel();  // 终止线程
                                             return;

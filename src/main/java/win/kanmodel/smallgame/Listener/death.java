@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 import win.kanmodel.smallgame.Chat.Channel;
 import win.kanmodel.smallgame.Gamer.Gamer;
+import win.kanmodel.smallgame.Gamer.Gamers;
 import win.kanmodel.smallgame.GeneralPluginProvider;
 import win.kanmodel.smallgame.Lobby;
 
@@ -24,16 +25,18 @@ public class death  implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event){
         if (Lobby.list.contains(event.getEntity())){
-            Player player = event.getEntity();
+            if(Gamers.getStatus() == Gamers.KILL){
+                Player player = event.getEntity();
 //            Bukkit.getConsoleSender().sendMessage(Color.RED + event.getDeathMessage() + " " + event.getEntity().getGameMode().name());
-            event.setDeathMessage(null);
+                event.setDeathMessage(null);
 //            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 3 " + player.getName());
-            player.setGameMode(GameMode.SPECTATOR);
-            GeneralPluginProvider.getGamers().getGamer(player).setChannel(Channel.getJudgeC(), Gamer.GAMER_JUDGE);
-            l = player.getLocation();
-            l.getBlock().setType(Material.DIAMOND_BLOCK);
+                player.setGameMode(GameMode.SPECTATOR);
+                GeneralPluginProvider.getGamers().getGamer(player).setChannel(Channel.getJudgeC(), Gamer.GAMER_JUDGE);
+                l = player.getLocation();
+                l.getBlock().setType(Material.DIAMOND_BLOCK);
 //            Bukkit.getServer().getWorld(player.getWorld().getUID())
-            Bukkit.getConsoleSender().sendMessage("X:" + l.getBlockX() + " Y:" + l.getBlockY() + " Z:" + l.getBlockZ());
+                Bukkit.getConsoleSender().sendMessage("X:" + l.getBlockX() + " Y:" + l.getBlockY() + " Z:" + l.getBlockZ());
+            }
         }
     }
 
