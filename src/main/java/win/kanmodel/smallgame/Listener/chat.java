@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import win.kanmodel.smallgame.Chat.Channel;
 import win.kanmodel.smallgame.Gamer.Gamer;
 import win.kanmodel.smallgame.GeneralPluginProvider;
 import win.kanmodel.smallgame.Lobby;

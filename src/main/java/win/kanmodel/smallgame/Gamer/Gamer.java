@@ -66,8 +66,8 @@ public class Gamer {
 			this.player.setGameMode(GameMode.SPECTATOR);
 			return;
 		} else {
-		this.player.setGameMode(GameMode.SURVIVAL);
-		return;
+			this.player.setGameMode(GameMode.SURVIVAL);
+			return;
 		}
 	}
 
