@@ -70,8 +70,6 @@ public class search implements Listener {
                                         }
                                         refresh("距离学级裁判结束还有: " + time + "s 人数:[" + Lobby.getList().size() + "]");
                                         if(time == 0) {
-//                                coolDownNow = false;
-//                                            Lobby.getList().forEach();
                                             Gamers.setStatus(Gamers.BEGAIN);
                                             Lobby.getList().forEach(player -> player.sendMessage("&3游戏结束胜利者为："));
                                             Lobby.getList().forEach(player -> BarAPI.removeBar(player));

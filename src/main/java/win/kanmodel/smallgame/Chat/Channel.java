@@ -15,8 +15,6 @@ public class Channel {
 	private static final Channel killerC = new Channel("Killer");
 	private static final Channel judgeC = new Channel("Judge");
 	private static final Channel deadC = new Channel("dead");
-	//	private static GeneralPluginProvider instance = new GeneralPluginProvider();
-//	List<Customer> listCustomer = new List<Customer>() { new Customer(), new Customer(), new Customer() };
 //	private static final ArrayList<Channel> allC = new ArrayList<>();
 	private String Name = null;
 	public List<Player> players = new ArrayList<>();
