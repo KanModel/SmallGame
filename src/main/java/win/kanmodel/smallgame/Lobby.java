@@ -28,7 +28,7 @@ public class Lobby {
                 Channel.getNormalC().addPlayer(player);
                 BarAPI.setMessage(player, "欢迎加入[弹丸论破] 等待游戏开始中...人数:[" + list.size() + "]");
                 refresh();
-                if (list.size() >= 2){
+                if (list.size() == 2){
                     new BukkitRunnable() {
 //                        int time = main.getMyConfig().getInt("ReportCD");  // 六十秒
                         int time = 10;
