@@ -52,6 +52,8 @@ public class Vote {
 		return gamers;
 	}
 	public void vote(Gamer gamer){
+		if(!this.gamers.containsKey(gamer))
+			return;
 		int votes = this.gamers.get(gamer);
 		this.gamers.remove(gamer);
 		this.gamers.put(gamer, votes);
