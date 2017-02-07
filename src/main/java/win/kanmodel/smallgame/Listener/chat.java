@@ -24,6 +24,8 @@ public class chat implements Listener {
 //		}else {
 //
 //		}
-		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message ,e.getPlayer());
+//		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message ,e.getPlayer());
+		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message);
+		Channel.getDeadC().broadcastMessage(message);
 	}
 }
