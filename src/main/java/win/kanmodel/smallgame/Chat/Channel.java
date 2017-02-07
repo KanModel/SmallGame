@@ -19,7 +19,7 @@ public class Channel {
 //	List<Customer> listCustomer = new List<Customer>() { new Customer(), new Customer(), new Customer() };
 //	private static final ArrayList<Channel> allC = new ArrayList<>();
 	private String Name = null;
-	private List<Player> players = new ArrayList<>();
+	public List<Player> players = new ArrayList<>();
 	public Channel(String name){
 		this.Name = name;
 	}
