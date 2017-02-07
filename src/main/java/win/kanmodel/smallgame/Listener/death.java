@@ -7,6 +7,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import win.kanmodel.smallgame.Chat.Channel;
+import win.kanmodel.smallgame.Gamer.Gamer;
+import win.kanmodel.smallgame.GeneralPluginProvider;
 import win.kanmodel.smallgame.Lobby;
 
 import java.sql.SQLException;
@@ -23,6 +26,7 @@ public class death  implements Listener {
             event.setDeathMessage(null);
 //            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 3 " + player.getName());
             player.setGameMode(GameMode.SPECTATOR);
+            GeneralPluginProvider.getGamers().getGamer(player).setChannel(Channel.getJudgeC(), Gamer.GAMER_JUDGE);
         }
     }
 }

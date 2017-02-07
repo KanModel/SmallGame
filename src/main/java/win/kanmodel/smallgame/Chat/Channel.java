@@ -6,7 +6,8 @@ import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-
+import win.kanmodel.smallgame.Gamer.Gamer;
+import win.kanmodel.smallgame.GeneralPluginProvider;
 
 
 public class Channel {
@@ -17,7 +18,7 @@ public class Channel {
 //	List<Customer> listCustomer = new List<Customer>() { new Customer(), new Customer(), new Customer() };
 //	private static final ArrayList<Channel> allC = new ArrayList<>();
 	private String Name = null;
-	public List<Player> players = new ArrayList<>();
+	private List<Player> players = new ArrayList<>();
 	public Channel(String name){
 		this.Name = name;
 	}
@@ -41,10 +42,38 @@ public class Channel {
 		return this.Name;
 	}
 	
-	public void broadcastMessage(String message, Player player){
-		players.forEach(p->{
-			p.sendMessage(ChatColor.GOLD + "[" + this.Name + " - " + player.getName() + "]" + ChatColor.WHITE + message);
-		});
+	public void broadcastMessage(String message, Player player) {
+		if (GeneralPluginProvider.getGamers().getGamer(player).getType() == Gamer.GAMER_JUDGE) {
+			GeneralPluginProvider.getGamers().getGamer(player).getCurrentChannel().getPlayers().forEach(p -> {
+				p.sendMessage(ChatColor.RED + "[" + this.Name + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+			});
+		}else if (GeneralPluginProvider.getGamers().getGamer(player).getType() == Gamer.GAMER_NORMAL){
+//			this.players.forEach(p -> {
+//				p.sendMessage(ChatColor.GOLD + "[" + this.Name + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+//			});
+			getNormalC().getPlayers().forEach(p -> {
+				p.sendMessage(ChatColor.GOLD + "[" + getNormalC().getName() + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+			});
+
+			getJudgeC().getPlayers().forEach(p -> {
+				p.sendMessage(ChatColor.GOLD + "[" + getNormalC().getName() + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+			});
+		}else if (GeneralPluginProvider.getGamers().getGamer(player).getType() == Gamer.GAMER_KILLER){
+//			this.players.forEach(p -> {
+//				p.sendMessage(ChatColor.GOLD + "[" + this.Name + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+//			});
+			getKillerC().getPlayers().forEach(p -> {
+				p.sendMessage(ChatColor.GOLD + "[" + getKillerC().getName() + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+			});
+
+			getJudgeC().getPlayers().forEach(p -> {
+				p.sendMessage(ChatColor.GOLD + "[" + getKillerC().getName() + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+			});
+		}
+		//judge可以看到所有频道的话
+//		getJudgeC().getPlayers().forEach(p->{
+//			p.sendMessage(ChatColor.GOLD + "[" + this.Name + " - " + player.getName() + "]" + ChatColor.WHITE + message);
+//		});
 	}
 
 	public void broadcastMessage(String message){
@@ -63,5 +92,9 @@ public class Channel {
 
 	public static Channel getJudgeC() {
 		return judgeC;
+	}
+
+	public List<Player> getPlayers() {
+		return players;
 	}
 }

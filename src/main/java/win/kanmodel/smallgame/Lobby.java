@@ -26,7 +26,9 @@ public class Lobby {
 
     public static void quit(Player player){
         BarAPI.removeBar(player);
-        GeneralPluginProvider.getGamers().getGamer(player).getCurrentChannel().removePlayer(player);
+        Channel.getJudgeC().removePlayer(player);
+        Channel.getKillerC().removePlayer(player);
+        Channel.getNormalC().removePlayer(player);
         list.remove(player);
         refresh();
 //        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 0 " + player.getName());
@@ -51,6 +53,9 @@ public class Lobby {
         GeneralPluginProvider.getGamers().getGamer(player).getCurrentChannel().removePlayer(player);
         list.remove(player);
         refresh();
+        Channel.getJudgeC().removePlayer(player);
+        Channel.getKillerC().removePlayer(player);
+        Channel.getNormalC().removePlayer(player);
     }
 
     public static ArrayList<Player> getList() {

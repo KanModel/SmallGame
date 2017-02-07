@@ -43,6 +43,13 @@ public class Gamer {
 		this.currentChannel = channel;
 		this.currentChannel.addPlayer(player);
 	}
+
+	public void setChannel(Channel channel, int type){
+		this.currentChannel.removePlayer(player);
+		this.currentChannel = channel;
+		this.currentChannel.addPlayer(player);
+		this.type = type;
+	}
 	
 	public void setNoclip(boolean a){
 		if(a){
@@ -51,5 +58,9 @@ public class Gamer {
 		}
 		this.player.setGameMode(GameMode.SURVIVAL);
 		return;
+	}
+
+	public int getType() {
+		return type;
 	}
 }
