@@ -35,7 +35,6 @@ public class Gamer {
 	public void kill(){
 		if(this.isDead)
 			return;
-		this.player.setHealth(0);
 		this.isDead = true;
 		this.setNoclip(true);
 		this.setChannel(Channel.getJudgeC());
