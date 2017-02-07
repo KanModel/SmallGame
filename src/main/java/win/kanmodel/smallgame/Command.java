@@ -34,6 +34,9 @@ public class Command implements CommandExecutor {
 //                BarAPI.removeBar(player);
                 Lobby.quit(player);
                 return true;
+            }else if (args.length > 0 && args[0].equalsIgnoreCase("t")){
+//                BarAPI.removeBar(player);
+                return true;
             } else {
                 showHelp(player);
                 return true;

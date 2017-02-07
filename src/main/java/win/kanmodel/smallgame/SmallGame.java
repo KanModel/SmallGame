@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import win.kanmodel.smallgame.Listener.chat;
 import win.kanmodel.smallgame.Listener.death;
 import win.kanmodel.smallgame.Listener.logout;
+import win.kanmodel.smallgame.Listener.search;
 
 public final class SmallGame extends JavaPlugin implements Listener {
 
@@ -27,6 +28,7 @@ public final class SmallGame extends JavaPlugin implements Listener {
         this.getServer().getPluginManager().registerEvents(new death(),this);
         this.getServer().getPluginManager().registerEvents(new chat(),this);
         this.getServer().getPluginManager().registerEvents(new logout(),this);
+        this.getServer().getPluginManager().registerEvents(new search(),this);
     }
 
     public void setUpSettingManager() {
