@@ -68,7 +68,7 @@ public class search implements Listener {
                                         if (Lobby.getList().size() < 2){
                                             cancel();
                                         }
-                                        refresh("距离学级裁判结束还有: " + time + "s 人数:[" + Lobby.getList().size() + "]");
+                                        refresh("投票进行中...结束还有: " + time + "s 人数:[" + Lobby.getList().size() + "]");
                                         if(time == 0) {
                                             Gamers.setStatus(Gamers.BEGAIN);
                                             Lobby.getList().forEach(player -> player.sendMessage("&3游戏结束胜利者为："));
