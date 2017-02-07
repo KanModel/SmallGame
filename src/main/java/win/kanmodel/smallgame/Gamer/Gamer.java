@@ -37,7 +37,7 @@ public class Gamer {
 			return;
 		this.isDead = true;
 		this.setNoclip(true);
-		this.setChannel(Channel.getDeadC());
+		this.setChannel(Channel.getJudgeC());
 	}
 	
 	public void setChannel(Channel channel){

@@ -5,7 +5,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import win.kanmodel.smallgame.Chat.Channel;
 import win.kanmodel.smallgame.Gamer.Gamer;
 import win.kanmodel.smallgame.GeneralPluginProvider;
 import win.kanmodel.smallgame.Lobby;
@@ -25,8 +24,6 @@ public class chat implements Listener {
 //		}else {
 //
 //		}
-//		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message ,e.getPlayer());
-		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message);
-		Channel.getDeadC().broadcastMessage(message);
+		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message ,e.getPlayer());
 	}
 }

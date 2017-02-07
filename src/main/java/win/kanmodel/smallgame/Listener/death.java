@@ -27,6 +27,7 @@ public class death  implements Listener {
         if (Lobby.list.contains(event.getEntity())){
             if(Gamers.getStatus() == Gamers.KILL){
             	Gamer gamer = GeneralPluginProvider.getGamers().getGamer(event.getEntity());
+                gamer.setType(Gamer.GAMER_JUDGE);
             	event.setDeathMessage(null);
             	gamer.kill();
             	l = gamer.getPlayer().getLocation();

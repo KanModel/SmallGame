@@ -51,7 +51,6 @@ public class search implements Listener {
                             }
                             refresh("距离学级裁判还有: " + time + "s 人数:[" + Lobby.getList().size() + "]");
                             if(time == 0) {
-//                                coolDownNow = false;
                                 refresh("开始投票");
                                 Gamers.setStatus(Gamers.JUDGE);
                                 new BukkitRunnable() {
@@ -81,6 +80,7 @@ public class search implements Listener {
                                             Channel.getKillerC().getPlayers().clear();
                                             Channel.getNormalC().getPlayers().clear();
                                             Channel.getJudgeC().getPlayers().clear();
+                                            Channel.getDeadC().getPlayers().clear();
                                             death.setL(null);
                                             cancel();  // 终止线程
                                             return;
