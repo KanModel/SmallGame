@@ -77,10 +77,11 @@ public class search implements Listener {
                                             Lobby.getList().forEach(player -> BarAPI.removeBar(player));
                                             Lobby.getList().forEach(player -> player.setGameMode(GameMode.SURVIVAL));
                                             Lobby.getList().clear();
-                                            Gamers.getGamers().clear();
-                                            Channel.getKillerC().getPlayers().clear();
-                                            Channel.getNormalC().getPlayers().clear();
-                                            Channel.getJudgeC().getPlayers().clear();
+                                            Gamers.gamers.clear();
+                                            Channel.getKillerC().players.clear();
+                                            Channel.getNormalC().players.clear();
+                                            Channel.getJudgeC().players.clear();
+                                            Channel.getDeadC().players.clear();
                                             death.setL(null);
                                             cancel();  // 终止线程
                                             return;
