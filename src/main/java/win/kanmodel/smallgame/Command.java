@@ -37,6 +37,13 @@ public class Command implements CommandExecutor {
             }else if (args.length > 0 && args[0].equalsIgnoreCase("t")){
 //                BarAPI.removeBar(player);
                 return true;
+            }else if (args.length > 0 && args[0].equalsIgnoreCase("v")){
+            	if(args[1] == null){
+            		sender.sendMessage("请输入目标玩家名字");
+            		return true;
+            	}
+            	GeneralPluginProvider.getVoteManager().vote(args[1]);
+                return true;
             } else {
                 showHelp(player);
                 return true;

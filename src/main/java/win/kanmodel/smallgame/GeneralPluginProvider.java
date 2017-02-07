@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
 import win.kanmodel.smallgame.Gamer.Gamers;
+import win.kanmodel.smallgame.Vote.VoteManager;
 
 import java.io.File;
 
@@ -17,6 +18,7 @@ public class GeneralPluginProvider
     public static Lobby lobby = new Lobby();
     private static GeneralPluginProvider instance = new GeneralPluginProvider();
     private Plugin plugin;
+    public static VoteManager VM = new VoteManager();
     private static Gamers gamers = new Gamers();
     
     public static GeneralPluginProvider getInstance(){
@@ -57,5 +59,9 @@ public class GeneralPluginProvider
     
     public static Gamers getGamers(){
     	return gamers;
+    }
+    
+    public static VoteManager getVoteManager(){
+    	return VM;
     }
 }
