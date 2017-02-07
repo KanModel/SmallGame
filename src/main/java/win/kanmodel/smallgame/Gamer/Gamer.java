@@ -65,9 +65,10 @@ public class Gamer {
 		if(a){
 			this.player.setGameMode(GameMode.SPECTATOR);
 			return;
-		}
+		} else {
 		this.player.setGameMode(GameMode.SURVIVAL);
 		return;
+		}
 	}
 
 	public int getType() {
