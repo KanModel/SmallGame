@@ -17,7 +17,7 @@ public class GeneralPluginProvider
     public static Lobby lobby = new Lobby();
     private static GeneralPluginProvider instance = new GeneralPluginProvider();
     private Plugin plugin;
-    public static Gamers gamers = new Gamers();
+    private static Gamers gamers = new Gamers();
     
     public static GeneralPluginProvider getInstance(){
         return instance;

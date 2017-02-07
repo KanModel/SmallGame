@@ -18,7 +18,7 @@ public class logout implements Listener {
     public void onPlayerDeath(PlayerQuitEvent event){
         if(Lobby.getList().contains(event.getPlayer())){
             Player player = event.getPlayer();
-            Bukkit.getConsoleSender().sendMessage(Color.GREEN + player.getName() + "quit");
+//            Bukkit.getConsoleSender().sendMessage(Color.GREEN + player.getName() + "quit");
             Lobby.removePlayer(player);
         }
     }

@@ -1,9 +1,6 @@
 package win.kanmodel.smallgame.Listener;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
-import org.bukkit.Server;
+import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,10 +17,10 @@ import java.sql.SQLException;
 public class death  implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event){
-        Player player = event.getEntity();
-        if (Lobby.list.contains(player)){
-//            player.sendMessage("gg");
-//            player.performCommand("gamemode 3");
+        if (Lobby.list.contains(event.getEntity())){
+            Player player = event.getEntity();
+//            Bukkit.getConsoleSender().sendMessage(Color.RED + event.getDeathMessage() + " " + event.getEntity().getGameMode().name());
+            event.setDeathMessage(null);
 //            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"gamemode 3 " + player.getName());
             player.setGameMode(GameMode.SPECTATOR);
         }

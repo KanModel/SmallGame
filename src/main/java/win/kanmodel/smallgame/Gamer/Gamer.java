@@ -9,10 +9,10 @@ import win.kanmodel.smallgame.Chat.Channel;
 
 public class Gamer {
 	Player player = null;
-	Channel currentChannel = null;
-	int GAMER_JUDGE = 2;
-	int GAMER_KILLER = 1;
-	int GAMER_NORMAL = 0;
+	static Channel currentChannel = null;
+	public static final int GAMER_JUDGE = 2;
+	public static final int GAMER_KILLER = 1;
+	public static final int GAMER_NORMAL = 0;
 	int type = GAMER_NORMAL;
 	boolean isDead = false;
 	

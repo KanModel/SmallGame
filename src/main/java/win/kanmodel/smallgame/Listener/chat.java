@@ -16,6 +16,6 @@ public class chat implements Listener {
 			return;
 		String message = e.getMessage();
 		e.setCancelled(true);
-		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message);
+		GeneralPluginProvider.getGamers().getGamer(e.getPlayer()).getCurrentChannel().broadcastMessage(message ,e.getPlayer());
 	}
 }
