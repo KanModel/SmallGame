@@ -6,6 +6,9 @@ package win.kanmodel.smallgame;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
+
+import win.kanmodel.smallgame.Gamer.Gamers;
+
 import java.io.File;
 
 public class GeneralPluginProvider
@@ -14,7 +17,8 @@ public class GeneralPluginProvider
     public static Lobby lobby = new Lobby();
     private static GeneralPluginProvider instance = new GeneralPluginProvider();
     private Plugin plugin;
-
+    public static Gamers gamers = new Gamers();
+    
     public static GeneralPluginProvider getInstance(){
         return instance;
     }
@@ -49,5 +53,9 @@ public class GeneralPluginProvider
 
     public static Lobby getLobby() {
         return lobby;
+    }
+    
+    public static Gamers getGamers(){
+    	return gamers;
     }
 }
