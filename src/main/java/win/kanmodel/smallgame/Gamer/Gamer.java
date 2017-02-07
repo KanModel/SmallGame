@@ -36,6 +36,9 @@ public class Gamer {
 		if(this.isDead)
 			return;
 		this.player.setHealth(0);
+		this.isDead = true;
+		this.setNoclip(true);
+		this.setChannel(Channel.getJudgeC());
 	}
 	
 	public void setChannel(Channel channel){
@@ -43,11 +46,19 @@ public class Gamer {
 		this.currentChannel = channel;
 		this.currentChannel.addPlayer(player);
 	}
-
+	
+	/*
+	
 	public void setChannel(Channel channel, int type){
 		this.currentChannel.removePlayer(player);
 		this.currentChannel = channel;
 		this.currentChannel.addPlayer(player);
+		this.type = type;
+	}
+	
+	*/
+	
+	public void setType(int type){
 		this.type = type;
 	}
 	
