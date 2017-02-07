@@ -49,4 +49,8 @@ public class death  implements Listener {
     public static Location getLocation() {
         return l;
     }
+
+    public static void setL(Location l) {
+        death.l = l;
+    }
 }
